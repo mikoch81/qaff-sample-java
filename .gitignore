@@ -1,0 +1,23 @@
+# Maven
+target/
+**/target/
+
+# Allure
+allure-results/
+allure-report/
+.allure/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Downloaded sample apps (scripts/download-*-sample)
+.qaff/

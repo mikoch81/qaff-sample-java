@@ -1,0 +1,450 @@
+{
+  "generatorVersion": "0.2.0",
+  "blueprintId": "java-maven-selenium-junit5-allure",
+  "blueprintVersion": "0.1.0",
+  "javaVersion": "21",
+  "projectName": "qaff-sample-java",
+  "packs": {
+    "qualityImpact": false,
+    "aiAgent": false,
+    "mcpToolkit": false
+  },
+  "ci": {
+    "jenkins": false,
+    "githubActions": true,
+    "azurePipelines": false,
+    "gitlabCi": false,
+    "jenkinsStrictQualityGate": false,
+    "githubActionsStrictQualityGate": false,
+    "azurePipelinesStrictQualityGate": false,
+    "gitlabCiStrictQualityGate": false,
+    "jenkinsTrendReport": false,
+    "githubActionsTrendReport": false,
+    "azurePipelinesTrendReport": false,
+    "gitlabCiTrendReport": false,
+    "jenkinsStrictTrendGate": false,
+    "githubActionsStrictTrendGate": false,
+    "azurePipelinesStrictTrendGate": false,
+    "gitlabCiStrictTrendGate": false,
+    "githubActionsPerformanceRun": false,
+    "jenkinsPerformanceRun": false,
+    "azurePipelinesPerformanceRun": false,
+    "gitlabCiPerformanceRun": false,
+    "githubActionsPerLayerAllure": false,
+    "jenkinsPerLayerAllure": false,
+    "azurePipelinesPerLayerAllure": false,
+    "gitlabCiPerLayerAllure": false,
+    "githubActionsArtifactRetentionDays": 7,
+    "githubActionsAllureReport": true,
+    "qaffInstall": "./qa-framework-factory-cli-0.2.0.tgz",
+    "jenkinsZephyrSync": false,
+    "githubActionsZephyrSync": true,
+    "githubActionsNotify": true,
+    "githubActionsPagesPublish": true
+  },
+  "integrations": {
+    "notifications": {
+      "slack": {
+        "enabled": true,
+        "channel": "#qa-runs"
+      },
+      "teams": {
+        "enabled": true
+      }
+    },
+    "zephyr": {
+      "enabled": true,
+      "provider": "zephyr-scale-cloud",
+      "mode": "dry-run",
+      "jenkinsSync": false,
+      "githubActionsSync": true,
+      "failOnUnmapped": false,
+      "projectKey": "DEMO"
+    }
+  },
+  "failureAnalysisAi": null,
+  "apps": [
+    {
+      "id": "demo-saas",
+      "layers": [
+        "web-desktop"
+      ]
+    }
+  ],
+  "generatedBy": "qaff",
+  "deterministic": true,
+  "generatedFiles": {
+    "schema": "qaff/managed-snapshot/v1",
+    "algorithm": "sha256",
+    "files": [
+      {
+        "path": ".github/workflows/qaff-ci.yml",
+        "sha256": "219f4d1e85dc3a2a19dd8e15b6632ab76b748dd5f411425e3d4a96e9ae02f646"
+      },
+      {
+        "path": ".gitignore",
+        "sha256": "1f6fb0e4c5d4de70a4ec9ad46bcb3ff2481cb16196c967e8d835e2031cabd1b3"
+      },
+      {
+        "path": "apps/demo-saas/web-desktop/pom.xml",
+        "sha256": "e13cc2b8898ea5b34ef63fd932576cc63c620f4e65580ea82bf71f372022234a"
+      },
+      {
+        "path": "apps/demo-saas/web-desktop/src/test/java/com/example/qaffsamplejava/apps/demosaas/webdesktop/ExampleTestData.java",
+        "sha256": "c2593f9f8c52b8a714adc6933e3fab8c1548fb8b39d219816097c72c7ddb6eee"
+      },
+      {
+        "path": "apps/demo-saas/web-desktop/src/test/java/com/example/qaffsamplejava/apps/demosaas/webdesktop/ExampleWebTest.java",
+        "sha256": "629dd03042c6bfebbc334633a3c91fcf77f5eb568fda24909efd1f04ab7b50ff"
+      },
+      {
+        "path": "apps/demo-saas/web-desktop/src/test/java/com/example/qaffsamplejava/apps/demosaas/webdesktop/pages/DemoHomePage.java",
+        "sha256": "ce58672c31ee4d414e446f2f51f057033e7bb21584b735021ebcd96ad89a3f48"
+      },
+      {
+        "path": "apps/demo-saas/web-desktop/src/test/java/com/example/qaffsamplejava/apps/demosaas/webdesktop/pages/ProductCardComponent.java",
+        "sha256": "919126b7280e3f26f7bfea9cdb8fd78b38303d2c25655e3522ccbfaf55ff5c1e"
+      },
+      {
+        "path": "apps/demo-saas/web-desktop/src/test/java/com/example/qaffsamplejava/apps/demosaas/webdesktop/tests/DemoHomeSmokeTest.java",
+        "sha256": "dd3eda832710609bac7d5ddee3b44d80bcba143fc552186b47b91e37cccc6bc4"
+      },
+      {
+        "path": "apps/demo-saas/web-desktop/src/test/java/com/example/qaffsamplejava/apps/demosaas/webdesktop/tests/DemoProductCardTest.java",
+        "sha256": "36df17afdbe373d5342848f5991dacf39dfae0cd0d6a305d1cf09c18d036aa80"
+      },
+      {
+        "path": "apps/demo-saas/web-desktop/src/test/resources/allure.properties",
+        "sha256": "4525f247b12d517e8a1dd1e947de97c9e022bff4ca35211d069f69853766e230"
+      },
+      {
+        "path": "apps/demo-saas/web-desktop/src/test/resources/config.properties",
+        "sha256": "cd7bf5a32effaf5d0696a1ba6e1657179ad96125ea080608e7002fd76c716132"
+      },
+      {
+        "path": "apps/demo-saas/web-desktop/src/test/resources/fixtures/demo-saas.html",
+        "sha256": "6dbfb93f2dc550390f3a3f7d1ff8b8114e41cd98cd4e1610afeb482483619fb6"
+      },
+      {
+        "path": "docs/agent-validation-checklist.md",
+        "sha256": "b301f124064f7f6fa926b0e27fe1310544d63452199a316a2dd7ce192213d93a"
+      },
+      {
+        "path": "docs/ai-api-test-authoring.md",
+        "sha256": "bf6e9fa6504d8bdaeb807e9af1bcfe025db76e1f37a13de09bf01a46a2a9849d"
+      },
+      {
+        "path": "docs/ai-authoring-readiness.md",
+        "sha256": "9fd20ed0dcdaab3d51656aaf6c960988433ffa7e70417e85636e1236bce582b7"
+      },
+      {
+        "path": "docs/ai-web-test-authoring.md",
+        "sha256": "6a7edef8d26a5f6ec9846fb0432593f92cb324c34b2e4b59350d1bedda724c2f"
+      },
+      {
+        "path": "docs/allure-step-mapping-contract.md",
+        "sha256": "a9379a449a218d41c8dee54c5e6182fcb7439dfc5b5cfd093c428964e3fa85a6"
+      },
+      {
+        "path": "docs/allure-step-policy.md",
+        "sha256": "1180bb13873b0e044aaa5e7f4d2b33b38949a33c8b03230aea7d7b547283a66e"
+      },
+      {
+        "path": "docs/ci-cd.md",
+        "sha256": "c87239ee20e30fac8f3e3791133bbda9a7e2b70cf575ed5597aed4b63dec9551"
+      },
+      {
+        "path": "docs/DEVELOPER_GUIDE.md",
+        "sha256": "9df8e770e2f54e784a2f2a2f19dc3e375725498e22db0a02e36a0555bc324911"
+      },
+      {
+        "path": "docs/GENERATED_FILE_OWNERSHIP.md",
+        "sha256": "ba93f3edfe65e7f9a7c255822dbda2d448a67d179d231d73c5df931e4c875a7c"
+      },
+      {
+        "path": "docs/generated-architecture.md",
+        "sha256": "1577d021f9819d27fe6534898e974c16f3bf927f889ffb35e38f64f9450ad4a1"
+      },
+      {
+        "path": "docs/generated-test-review-contract.md",
+        "sha256": "a02e36826f84e9d97f4700aad84be0ef2b919acd9850c8b266763cf3183fcd40"
+      },
+      {
+        "path": "docs/github-actions.md",
+        "sha256": "487dc2b29f4834222c2c53d105590d835b360462f63fe4a0bc0c5b7c40cd00aa"
+      },
+      {
+        "path": "docs/HOW_TO_ADD_PAGE_OBJECT.md",
+        "sha256": "58181a6956173436bfcbfc4b0662c7ee23039cb81ca5f1ef8a36e3f37c218286"
+      },
+      {
+        "path": "docs/HOW_TO_ADD_WEB_TEST.md",
+        "sha256": "f735aec910e5be4078a6da2f3867044ca7f978979ebff4b8bd190755b9b1fa6d"
+      },
+      {
+        "path": "docs/HOW_TO_INTERPRET_VERIFY.md",
+        "sha256": "e502f1d0da83225803e90551befeb84305be591f9b75330ef92b33d980dcaa19"
+      },
+      {
+        "path": "docs/HOW_TO_KEEP_DEPENDENCY_DIRECTION_VALID.md",
+        "sha256": "1f4b7f225da3833cdac4edc9a5eb0fdb6990e8c7766b91e8c79dac1444f83765"
+      },
+      {
+        "path": "docs/HOW_TO_RUN_TESTS_LOCALLY.md",
+        "sha256": "a971b7556c2306c034c516fe53aa6733d7e2f002e8acd6c1e5a9b6c7097bf01d"
+      },
+      {
+        "path": "docs/HOW_TO_TARGET_YOUR_APP.md",
+        "sha256": "8752d4f16f645cdfd4bc4fd470354ee406bc6981f3ff00291e91cdea354da721"
+      },
+      {
+        "path": "docs/HOW_TO_USE_ALLURE.md",
+        "sha256": "5870030c762094bb0aaeb8f661e1da7a105ace2bf31d4fd4ccb7bf598b53cb43"
+      },
+      {
+        "path": "docs/HOW_TO_USE_GENERATED_SCRIPTS.md",
+        "sha256": "c57f2deb2098198d55176228e7a7471d575e8eb16f81a2e8b8021617eda8f4ae"
+      },
+      {
+        "path": "docs/HOW_TO_USE_JUNIT5.md",
+        "sha256": "9a5d95afc0b2ed245dc479bf5a89f8144152c16df24579d92761fa81fcd1b240"
+      },
+      {
+        "path": "docs/how-to-run.md",
+        "sha256": "d93ab1843c5072db43e35203845d304ad57c49f3491074c8ab44508ee00d5f8e"
+      },
+      {
+        "path": "docs/local-fixture.md",
+        "sha256": "4373fd7396685867ca7f076290a60dc6cd748881e7190a05226f1f94e525329e"
+      },
+      {
+        "path": "docs/local-scripts.md",
+        "sha256": "b231d5a28ea0ec0e05fd6360a879eaaa62966c80372ff16bee1ebc8b38e01062"
+      },
+      {
+        "path": "docs/locator-evidence-contract.md",
+        "sha256": "32bb70d41f53c2bd773325f607d5bdb5488d510dcafe58dd98ce42db9c2e3274"
+      },
+      {
+        "path": "docs/locator-policy.md",
+        "sha256": "c30a4914b1f8e1f22b224668972e3c1354b98d884eb55c2b443bc1cefe578cd7"
+      },
+      {
+        "path": "docs/notifications.md",
+        "sha256": "2b98c0e7c6dba7fbecda19ef9193a7edccc03daf310412e7d64589cc1b33ac6f"
+      },
+      {
+        "path": "docs/scenario-contract.md",
+        "sha256": "68d2ba099f9d3e45c4af6eb1ba973844fa490680c3b3acb4e92a4f27d8669625"
+      },
+      {
+        "path": "docs/test-authoring-request.md",
+        "sha256": "2c26ed1e24527aa2cadd19e0626fc9bc2e98fc7aea21ee71bf50982d584b8e7e"
+      },
+      {
+        "path": "framework-core/pom.xml",
+        "sha256": "78e79c0187243021756e1388055ab74f246c82cbdfd264000ac1b79150817c7f"
+      },
+      {
+        "path": "framework-core/src/main/java/com/example/qaffsamplejava/core/config/ConfigLoader.java",
+        "sha256": "00deff63f1fb0110cf6103c26a7610b9b54315d894f49175dead195c777e6527"
+      },
+      {
+        "path": "framework-core/src/main/java/com/example/qaffsamplejava/core/util/ResourcePath.java",
+        "sha256": "bfb483172bffc362c8b966c03fd1d77f57d494d396c3c660bbe246590337b01b"
+      },
+      {
+        "path": "framework-core/src/main/java/com/example/qaffsamplejava/core/util/Resources.java",
+        "sha256": "2e556a0422330f3a5174977f88846f0546ebe28255a176407d5089522eab7184"
+      },
+      {
+        "path": "framework-core/src/main/java/com/example/qaffsamplejava/core/util/Retry.java",
+        "sha256": "384fa607e40234500f40cd13b7428ff81c15e544fcb8d9db0b2389984ef0320a"
+      },
+      {
+        "path": "framework-core/src/main/java/com/example/qaffsamplejava/core/util/SoftAssertionHelper.java",
+        "sha256": "dd1d543dcecddef5173809b474e5b8bc1a42cacf1b40c0cae961f4305b7accb0"
+      },
+      {
+        "path": "framework-core/src/main/java/com/example/qaffsamplejava/core/util/TestDataBuilder.java",
+        "sha256": "fe3446403ea50aeadae268f446202a5b7a40e34e7a054b6341ae89e0d250875e"
+      },
+      {
+        "path": "framework-web/pom.xml",
+        "sha256": "c86297420b3bc4a6e188d860595698a88797704a3c3c05c0ac44cd254ef454e8"
+      },
+      {
+        "path": "framework-web/src/main/java/com/example/qaffsamplejava/web/config/SmokeExpectations.java",
+        "sha256": "b06390ed81fadd3b1a93538cdbba677213f9a4fbf8f8e09f796bc822235cfe43"
+      },
+      {
+        "path": "framework-web/src/main/java/com/example/qaffsamplejava/web/config/WebConfig.java",
+        "sha256": "2ffa554406bf5986a8c24b6c74a3375f3799fc9a5409ef8882df54c53ff5a561"
+      },
+      {
+        "path": "framework-web/src/main/java/com/example/qaffsamplejava/web/driver/WebDriverFactory.java",
+        "sha256": "68de6d45cfa41bd996b7d35a4d4838b0aa2a6608833f85b2e9a6002a5ccc81dc"
+      },
+      {
+        "path": "framework-web/src/main/java/com/example/qaffsamplejava/web/extension/RegressionTest.java",
+        "sha256": "56469ca3bd11ef1c6d57341b8f751529d13b08851f48ddfc5f85aced48ece5d8"
+      },
+      {
+        "path": "framework-web/src/main/java/com/example/qaffsamplejava/web/extension/RetryExtension.java",
+        "sha256": "1664ae3191a5c1ddd460693a0dc67d7f6c6f1c8ee41c1ada36f9be5b448aa9e5"
+      },
+      {
+        "path": "framework-web/src/main/java/com/example/qaffsamplejava/web/extension/RetryingTest.java",
+        "sha256": "e75cdb67d446cd932bba5306655df6d14544272e7fea807dc73947e9c7513d0d"
+      },
+      {
+        "path": "framework-web/src/main/java/com/example/qaffsamplejava/web/extension/ScreenshotOnFailureExtension.java",
+        "sha256": "e6b84f5453a528c9f34c27aa9c41c6abb7ae47f3eb7eb935f36b74843cc7c45d"
+      },
+      {
+        "path": "framework-web/src/main/java/com/example/qaffsamplejava/web/extension/SmokeTest.java",
+        "sha256": "aa5c640c6bc428bbef32f902365b2066674f4bebd59c289fcdbab5e9afd0d09f"
+      },
+      {
+        "path": "framework-web/src/main/java/com/example/qaffsamplejava/web/page/BasePage.java",
+        "sha256": "471a65d1e6a4ec21e94a13adb1effd78cc10145eeafe840d5ce0b791666cfb50"
+      },
+      {
+        "path": "framework-web/src/main/java/com/example/qaffsamplejava/web/page/PageComponent.java",
+        "sha256": "a9e130f6b1260a7f8a9e7560c1dbe16f689f090f786af0ef7b17fd42f95b20a1"
+      },
+      {
+        "path": "framework-web/src/main/java/com/example/qaffsamplejava/web/test/BaseWebMobileTest.java",
+        "sha256": "9a42a7280c783fdb34ae6fde2ddbafb5bed69be2ff67e072e998b175cb3314ea"
+      },
+      {
+        "path": "framework-web/src/main/java/com/example/qaffsamplejava/web/test/BaseWebTest.java",
+        "sha256": "e0f77e8dfec467f5cda974be4350d4f575450df3505538f9e4594e88cf9048cb"
+      },
+      {
+        "path": "framework-web/src/test/java/com/example/qaffsamplejava/web/page/ExamplePageObject.java",
+        "sha256": "5247c0c27631489969a2e2830c0653e8541590254bcdffefd9bc6a2d21810f37"
+      },
+      {
+        "path": "pom.xml",
+        "sha256": "8e7a8eddb1ac09a7df756a6b358014ac69714db1de8dd857a790d2ede91e33f9"
+      },
+      {
+        "path": "README.md",
+        "sha256": "6d6d154b0e7d0482df86b5492ec412353fed0d960625ee58704172e7a12cf1c3"
+      },
+      {
+        "path": "scripts/allure-report.ps1",
+        "sha256": "cea02207710e69dd37ffa40cfe345e01c51f69820cc7d826bc018cb567d1014d"
+      },
+      {
+        "path": "scripts/allure-report.sh",
+        "sha256": "973c38e3d545451a396c09063788a6d4e3b924fd24512d3b3ba0cb2a80df5ab3"
+      },
+      {
+        "path": "scripts/run-all-tests.ps1",
+        "sha256": "8b57cb5976387d72e03fd2c9d36726112eef5c8993cc2dfd0b88130962cc4f58"
+      },
+      {
+        "path": "scripts/run-all-tests.sh",
+        "sha256": "b53ecaf391139dfc511b8714244142a64133fa41f8fb8d2b2fc430139036d86f"
+      },
+      {
+        "path": "scripts/run-android-smoke.ps1",
+        "sha256": "a63917319d1662713503ff01d3f18f7a83516a6d11458bbd26e11114695ebf84"
+      },
+      {
+        "path": "scripts/run-android-smoke.sh",
+        "sha256": "f255bbdc7ea970d9efacbaa2bf63af616aab72549a2d3954871516e6122e2a60"
+      },
+      {
+        "path": "scripts/run-api-smoke.ps1",
+        "sha256": "cbd01853e586bff6572fb19b7654f2a58a10414a7fdfdaa33cc2460a972b651e"
+      },
+      {
+        "path": "scripts/run-api-smoke.sh",
+        "sha256": "8ff285de5f9780d62eaee38100981d308715f886bed8751b9f3a4aa2d6201f60"
+      },
+      {
+        "path": "scripts/run-gatling-smoke.ps1",
+        "sha256": "74352c28e459e893f9cabc15eb4681de82e8fd9cdadb3816463d2e7d6b0e32ab"
+      },
+      {
+        "path": "scripts/run-gatling-smoke.sh",
+        "sha256": "87a1a324e4a9e14e4fbbfbcb9e84e7a79032a111b77b871af1b35e28930a8ce4"
+      },
+      {
+        "path": "scripts/run-integration-smoke.ps1",
+        "sha256": "bb52ac9f57bfa4d9ddd6fa9ce622cc3fe154a16c5b795b9f6ccd53c72c710c23"
+      },
+      {
+        "path": "scripts/run-integration-smoke.sh",
+        "sha256": "6dba321190e75a2f5cb12749d9e01760655c312a2fab7009531d541368e44858"
+      },
+      {
+        "path": "scripts/run-ios-smoke.ps1",
+        "sha256": "fccba013d0936d01508ae38c4894275838050a29d3d302ed75a146a48300dfbd"
+      },
+      {
+        "path": "scripts/run-ios-smoke.sh",
+        "sha256": "352ff688f1717d0bb6fe26d8f345d0a57841f9776c9afc5c81db8e8313d4aeef"
+      },
+      {
+        "path": "scripts/run-jmeter-import-smoke.ps1",
+        "sha256": "5fbdedc7f526a48d008afed8f6051c0fb6c114099619b071c9af324cea4eb039"
+      },
+      {
+        "path": "scripts/run-jmeter-import-smoke.sh",
+        "sha256": "d9b3aa42eb10b152272c2cf197c47a3255d474e7f4c5d6526461bdca1ed471f8"
+      },
+      {
+        "path": "scripts/run-k6-import-smoke.ps1",
+        "sha256": "310fd28826360f0b2bf80404504c3f822489b6e7e964b28829cfe2bc2d9d7597"
+      },
+      {
+        "path": "scripts/run-k6-import-smoke.sh",
+        "sha256": "4f0993d6bc29e4a7b70832097d1e2bdb4b5e1920132a602aa1618bab541b8e4a"
+      },
+      {
+        "path": "scripts/run-mobile-appium-smoke.ps1",
+        "sha256": "5084063d980c09c52de5096a2e3f5f2baf09fe6cc8b263ecd147674ec0404f43"
+      },
+      {
+        "path": "scripts/run-mobile-appium-smoke.sh",
+        "sha256": "c284906ece95011d03006648a58f27efca86894890c6179a665d86fdfc1fcd4a"
+      },
+      {
+        "path": "scripts/run-performance-smoke.ps1",
+        "sha256": "65f3f31de0ec5325710d1e93fc6fd9670a51f1a0be0a5e6280b73feecc6e109c"
+      },
+      {
+        "path": "scripts/run-performance-smoke.sh",
+        "sha256": "e333a33ac4dc45719d3a87e9e72548790f12f8838a1bf306e39329b5f73fd6c0"
+      },
+      {
+        "path": "scripts/run-web-mobile-smoke.ps1",
+        "sha256": "562b60ce4b9c062932b2b922410ec8d5ea36b559d942ecb526ff6837761273d6"
+      },
+      {
+        "path": "scripts/run-web-mobile-smoke.sh",
+        "sha256": "b215d2b3cb2a03f980a73d643caff3f1367fcad6390e37e385ba6236bd6d174d"
+      },
+      {
+        "path": "scripts/run-web-smoke.ps1",
+        "sha256": "970a722732e5accb9983f1f201ad7a086df010333f16deebe16a0e5c3395ca63"
+      },
+      {
+        "path": "scripts/run-web-smoke.sh",
+        "sha256": "c5abb4aa9362c185a61f594e0fc80dd7d3f0d553e9daf0a35dfa4b550e1d3833"
+      },
+      {
+        "path": "scripts/verify-framework.ps1",
+        "sha256": "d3a4900bb911c337b1385a6258d909104f7f307a6ccc07988859750f4cdee1ba"
+      },
+      {
+        "path": "scripts/verify-framework.sh",
+        "sha256": "cc6bd22a8a1e55989eb7dd9e15404c7bdafd6720704f20aad82015548c6ce612"
+      }
+    ]
+  }
+}
