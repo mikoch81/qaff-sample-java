@@ -76,6 +76,7 @@ docs/locator-policy.md
 docs/notifications.md
 docs/scenario-contract.md
 docs/test-authoring-request.md
+docs/test-management-sync.md
 framework-core/pom.xml
 framework-core/src/main/java/com/example/qaffsamplejava/core/config/ConfigLoader.java
 framework-core/src/main/java/com/example/qaffsamplejava/core/util/ResourcePath.java

@@ -19,6 +19,7 @@ Step-by-step reference for the generated workflow at
 - Repository secrets `ZEPHYR_BASE_URL` and `ZEPHYR_TOKEN` are required for the opt-in Zephyr Scale Cloud sync step.
 - Repository variable `ZEPHYR_PROJECT_KEY` is optional when `integrations.zephyr.projectKey` was generated; `ZEPHYR_CYCLE_KEY` is optional.
 - Repository secret(s) SLACK_WEBHOOK_URL / TEAMS_WEBHOOK_URL are required for the opt-in run notification step (`ci.githubActions.notify`).
+- Repository secrets `JIRA_BASE_URL`, `JIRA_USER`, `JIRA_TOKEN` are required for the opt-in Jira comment sync step(s); see `test-management-sync.md`.
 
 ## 2. When does the workflow run?
 
@@ -93,20 +94,17 @@ Artifacts appear under the **Summary** tab of each workflow run.
 
 ## 6. Current limitations (Phase 1.9)
 
-- **Zephyr Scale Cloud sync is enabled.** The workflow calls
-  `qaff sync-zephyr-results` after test execution. Live mode requires
-  user-managed GitHub secrets; generated files never store tokens.
-- Jira, Xray, TestRail, Zephyr Squad and Zephyr Data Center connectors
-  remain out of scope for this generated project.
+- **Opt-in test-management sync is enabled** (Zephyr Scale Cloud / Jira comment).
+  The steps run after the tests with user-managed GitHub secrets; generated
+  files never store tokens. No test cases, runs or issues are created.
 - **No provider execution is generated in CI.** The workflow can only import
   optional pre-produced k6/JMeter files via generated helper scripts.
   It does not run k6, JMeter, Gatling Enterprise, or JMH workloads. Enable
   `ci.githubActions.performanceRun` to add the offline Gatling producer step.
 - **No application deployment.** The only deployment is the opt-in
   GitHub Pages publish of the Allure report (see below).
-- **No secrets** are read or required. If you later need to talk to a
-  real environment, add the appropriate `secrets.*` references in a
-  follow-up patch — do not hard-code anything.
+- **No inline secrets.** Only the opt-in sync steps read repository
+  secrets (listed above) — do not hard-code anything.
 - **No matrix fan-out** today. Use the `workflow_dispatch` inputs to
   pick one application/layer pair per run, or trigger the workflow
   multiple times. A matrix variant is on the roadmap.

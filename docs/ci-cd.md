@@ -52,7 +52,7 @@ first puts `$HOME/.qaff/bin` on PATH and, when `qaff` is still missing, runs
 
 ## Out of scope today
 
-- **Zephyr Scale Cloud sync is opt-in only.** It is enabled only for explicitly configured CI providers and requires user-managed credentials/environment variables.
+- **Test-management sync is opt-in only.** Zephyr Scale Cloud / Jira comment steps are enabled only for explicitly configured CI providers and require user-managed credentials/environment variables. No test cases, runs or issues are created (see `test-management-sync.md`).
 - **No CI-wired performance provider execution.** The `performance` layer module
   runs its JUnit 5 placeholder under default CI. The local Gatling reference
   smoke is explicit opt-in via `run-gatling-smoke` or direct Maven.
@@ -62,8 +62,8 @@ first puts `$HOME/.qaff/bin` on PATH and, when `qaff` is still missing, runs
 - **No application deployment.** Generated runners run tests; the only
   deployment is the opt-in Pages publish of the Allure report (below).
 - **No inline secrets.** Generated CI files contain no credential values.
-  The opt-in Zephyr sync step reads user-managed CI secrets / environment
-  variables (`ZEPHYR_BASE_URL`, `ZEPHYR_TOKEN`); nothing is stored in
+  The opt-in sync steps read user-managed CI secrets / environment
+  variables (`ZEPHYR_BASE_URL`, `ZEPHYR_TOKEN`, `JIRA_BASE_URL`, `JIRA_USER`, `JIRA_TOKEN`); nothing is stored in
   generated files. The opt-in run notification step reads SLACK_WEBHOOK_URL / TEAMS_WEBHOOK_URL the same way.
 
 ## Where to find more

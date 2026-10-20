@@ -40,7 +40,8 @@
     "jenkinsZephyrSync": false,
     "githubActionsZephyrSync": true,
     "githubActionsNotify": true,
-    "githubActionsPagesPublish": true
+    "githubActionsPagesPublish": true,
+    "githubActionsJiraComment": true
   },
   "integrations": {
     "notifications": {
@@ -60,6 +61,10 @@
       "githubActionsSync": true,
       "failOnUnmapped": false,
       "projectKey": "DEMO"
+    },
+    "jira": {
+      "enabled": true,
+      "issueKey": "DEMO-1"
     }
   },
   "failureAnalysisAi": null,
@@ -79,7 +84,7 @@
     "files": [
       {
         "path": ".github/workflows/qaff-ci.yml",
-        "sha256": "219f4d1e85dc3a2a19dd8e15b6632ab76b748dd5f411425e3d4a96e9ae02f646"
+        "sha256": "3196ab65cb9c53cacb98feb19c587e19af56f554249bfd15e91a7b55bc4991ea"
       },
       {
         "path": ".gitignore",
@@ -151,7 +156,7 @@
       },
       {
         "path": "docs/ci-cd.md",
-        "sha256": "c87239ee20e30fac8f3e3791133bbda9a7e2b70cf575ed5597aed4b63dec9551"
+        "sha256": "76751a3bccd0d7575c0ada215f20806815d283450a0391dcb8a3f2540e6f8ce2"
       },
       {
         "path": "docs/DEVELOPER_GUIDE.md",
@@ -171,7 +176,7 @@
       },
       {
         "path": "docs/github-actions.md",
-        "sha256": "487dc2b29f4834222c2c53d105590d835b360462f63fe4a0bc0c5b7c40cd00aa"
+        "sha256": "53d4066debf8cb04457b21df4ba6f750d0f5655f4c103c41848e1ab8306e1be0"
       },
       {
         "path": "docs/HOW_TO_ADD_PAGE_OBJECT.md",
@@ -240,6 +245,10 @@
       {
         "path": "docs/test-authoring-request.md",
         "sha256": "2c26ed1e24527aa2cadd19e0626fc9bc2e98fc7aea21ee71bf50982d584b8e7e"
+      },
+      {
+        "path": "docs/test-management-sync.md",
+        "sha256": "e31fbb19f12fb9aac02eed9da0df1c1451c5676a85cb313be2fd4e68f5541e3d"
       },
       {
         "path": "framework-core/pom.xml",
