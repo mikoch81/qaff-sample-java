@@ -10,7 +10,7 @@ Step-by-step reference for the generated workflow at
 - GitHub Actions enabled for the repository (default for public repos
   and most organisation policies).
 - The default `ubuntu-latest` runner image. The workflow uses
-  `actions/setup-java@v4` (Temurin JDK 21) and Maven dependency
+  `actions/setup-java@v6` (Temurin JDK 21) and Maven dependency
   caching (`cache: maven`); no other action is required.
 - A Chromium binary on the runner if you intend to actually execute
   the `web-desktop` layer in CI. The workflow defaults
@@ -80,7 +80,7 @@ present in the repository.
 
 ## 5. Where artifacts are uploaded
 
-The workflow uploads three artifacts via `actions/upload-artifact@v4`,
+The workflow uploads three artifacts via `actions/upload-artifact@v7`,
 all marked `if-no-files-found: ignore` so missing outputs do not fail
 the run:
 

@@ -84,7 +84,7 @@
     "files": [
       {
         "path": ".github/workflows/qaff-ci.yml",
-        "sha256": "3196ab65cb9c53cacb98feb19c587e19af56f554249bfd15e91a7b55bc4991ea"
+        "sha256": "27b9158dde5aca1e8e6c518183425c668cac093fe6f8536d848185463c20c7a6"
       },
       {
         "path": ".gitignore",
@@ -176,7 +176,7 @@
       },
       {
         "path": "docs/github-actions.md",
-        "sha256": "53d4066debf8cb04457b21df4ba6f750d0f5655f4c103c41848e1ab8306e1be0"
+        "sha256": "a25b083694ad7cb7aec70e9196c1a04c079b51ee4a0418f9c17899639c7a4d26"
       },
       {
         "path": "docs/HOW_TO_ADD_PAGE_OBJECT.md",
