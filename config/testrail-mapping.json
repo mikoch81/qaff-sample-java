@@ -1,4 +1,7 @@
 {
-  "_comment": "Optional TestRail (caseKey C<id>) mapping (caseKey per test) for tests without an Allure TMS link. Prefer fullName or historyId over display names.",
-  "mappings": []
+  "_comment": "Allure fullName -> TestRail case (qaff sync-test-results --provider testrail). Phase 112 live check.",
+  "mappings": [
+    { "caseKey": "C1", "fullName": "com.example.qaffsamplejava.apps.demosaas.webdesktop.tests.DemoHomeSmokeTest.homePageRenders" },
+    { "caseKey": "C2", "fullName": "com.example.qaffsamplejava.apps.demosaas.webdesktop.tests.DemoProductCardTest.productCardFieldsAreConsistent" }
+  ]
 }
