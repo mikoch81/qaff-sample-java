@@ -5,10 +5,11 @@ and the matching `ci.<jenkins|githubActions>.<xraySync|testrailSync|jiraComment>
 flags are on. After the tests, each step runs `qaff sync-test-results --mode live`
 for the selected app (TypeScript: every app with web-desktop Allure results).
 
-- **GitHub Actions** — Jira comment.
+- **GitHub Actions** — TestRail / Jira comment.
 
 ## What is sent
 
+- **TestRail** — one `POST index.php?/api/v2/add_results_for_cases/1` to the existing run; skipped tests are left out (TestRail rejects Untested on add_result).
 - **Jira** — one comment (`POST /rest/api/3/issue/DEMO-1/comment`) with the totals and a link to the CI run.
 
 Case keys come from the Allure `tms` link, a `tms` / `testCaseKey` label or the
@@ -16,6 +17,9 @@ mapping file. No test cases, runs or issues are created remotely.
 
 ## Secrets
 
+- `TESTRAIL_URL`
+- `TESTRAIL_USER`
+- `TESTRAIL_API_KEY`
 - `JIRA_BASE_URL`
 - `JIRA_USER`
 - `JIRA_TOKEN`
@@ -26,7 +30,7 @@ environment) — never from the qaff config, `qa-factory.lock.json` or generated
 ## Local preview
 
 ```bash
-qaff sync-test-results --provider jira-comment --project . --app <app-id> --issue-key DEMO-1
+qaff sync-test-results --provider testrail --project . --app <app-id> --run-id 1 --mapping config/testrail-mapping.json
 ```
 
 Without `--mode live` nothing is sent: the request is written to

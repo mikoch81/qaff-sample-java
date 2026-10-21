@@ -47,6 +47,7 @@ apps/demo-saas/web-desktop/src/test/java/com/example/qaffsamplejava/apps/demosaa
 apps/demo-saas/web-desktop/src/test/resources/allure.properties
 apps/demo-saas/web-desktop/src/test/resources/config.properties
 apps/demo-saas/web-desktop/src/test/resources/fixtures/demo-saas.html
+config/testrail-mapping.json
 docs/agent-validation-checklist.md
 docs/ai-api-test-authoring.md
 docs/ai-authoring-readiness.md

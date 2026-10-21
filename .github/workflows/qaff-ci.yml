@@ -2,10 +2,10 @@
 #
 # Hard rules:
 #   * No inline secrets in this file. The opt-in sync steps read the
-#     user-managed repository secrets ZEPHYR_BASE_URL / ZEPHYR_TOKEN / JIRA_BASE_URL / JIRA_USER / JIRA_TOKEN;
+#     user-managed repository secrets ZEPHYR_BASE_URL / ZEPHYR_TOKEN / TESTRAIL_URL / TESTRAIL_USER / TESTRAIL_API_KEY / JIRA_BASE_URL / JIRA_USER / JIRA_TOKEN;
 #     nothing is stored in generated files. The opt-in run notification
 #     step reads SLACK_WEBHOOK_URL / TEAMS_WEBHOOK_URL the same way.
-#   * Opt-in test-management sync steps: Zephyr Scale Cloud (mode: dry-run) / Jira comment.
+#   * Opt-in test-management sync steps: Zephyr Scale Cloud (mode: dry-run) / TestRail / Jira comment.
 #     No test cases, runs or issues are created.
 #   * No external test systems. The workflow runs Maven against the
 #     generated reactor only.
@@ -202,6 +202,32 @@ jobs:
           fi
           qaff sync-zephyr-results --project . --app "$SYNC_APP" --project-key "$PROJECT_KEY" $CYCLE_ARG --mode dry-run --force --json
 
+      # Opt-in TestRail sync (ci.githubActions.testrailSync): qaff sync-test-results --mode live.
+      - name: Sync Allure results to TestRail
+        if: always()
+        env:
+          TESTRAIL_URL: ${{ secrets.TESTRAIL_URL }}
+          TESTRAIL_USER: ${{ secrets.TESTRAIL_USER }}
+          TESTRAIL_API_KEY: ${{ secrets.TESTRAIL_API_KEY }}
+        run: |
+          set -e
+          export PATH="$HOME/.qaff/node/bin:$HOME/.qaff/bin:$PATH"
+          if ! command -v qaff >/dev/null 2>&1; then
+            if ! command -v npm >/dev/null 2>&1; then
+              mkdir -p "$HOME/.qaff/node"
+              curl -fsSL https://nodejs.org/dist/v24.21.0/node-v24.21.0-linux-x64.tar.gz | tar -xz -C "$HOME/.qaff/node" --strip-components=1
+            fi
+            npm install -g --prefix "$HOME/.qaff" ./qa-framework-factory-cli-0.2.0.tgz
+          fi
+          if ! command -v qaff >/dev/null 2>&1; then
+            echo "qaff CLI not found on PATH — skipping the TestRail sync. Install qaff in an earlier step to enable it."
+            exit 0
+          fi
+          SYNC_APP="${{ inputs.application || 'demo-saas' }}"
+          if [ "$SYNC_APP" = "all" ]; then
+            SYNC_APP="demo-saas"
+          fi
+          qaff sync-test-results --provider testrail --project . --app "$SYNC_APP" --run-id 1 --mapping config/testrail-mapping.json --mode live --force --json
       # Opt-in Jira comment sync (ci.githubActions.jiraComment): qaff sync-test-results --mode live.
       - name: Comment test results on Jira
         if: always()

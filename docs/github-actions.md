@@ -19,7 +19,7 @@ Step-by-step reference for the generated workflow at
 - Repository secrets `ZEPHYR_BASE_URL` and `ZEPHYR_TOKEN` are required for the opt-in Zephyr Scale Cloud sync step.
 - Repository variable `ZEPHYR_PROJECT_KEY` is optional when `integrations.zephyr.projectKey` was generated; `ZEPHYR_CYCLE_KEY` is optional.
 - Repository secret(s) SLACK_WEBHOOK_URL / TEAMS_WEBHOOK_URL are required for the opt-in run notification step (`ci.githubActions.notify`).
-- Repository secrets `JIRA_BASE_URL`, `JIRA_USER`, `JIRA_TOKEN` are required for the opt-in Jira comment sync step(s); see `test-management-sync.md`.
+- Repository secrets `TESTRAIL_URL`, `TESTRAIL_USER`, `TESTRAIL_API_KEY`, `JIRA_BASE_URL`, `JIRA_USER`, `JIRA_TOKEN` are required for the opt-in TestRail / Jira comment sync step(s); see `test-management-sync.md`.
 
 ## 2. When does the workflow run?
 
@@ -94,7 +94,7 @@ Artifacts appear under the **Summary** tab of each workflow run.
 
 ## 6. Current limitations (Phase 1.9)
 
-- **Opt-in test-management sync is enabled** (Zephyr Scale Cloud / Jira comment).
+- **Opt-in test-management sync is enabled** (Zephyr Scale Cloud / TestRail / Jira comment).
   The steps run after the tests with user-managed GitHub secrets; generated
   files never store tokens. No test cases, runs or issues are created.
 - **No provider execution is generated in CI.** The workflow can only import
