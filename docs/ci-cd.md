@@ -1,12 +1,13 @@
 # CI / CD strategy
 
-This generated framework wires **GitHub Actions** (Phase 1.9) as the runner.
+This generated framework wires **GitHub Actions** (Phase 1.9) and **Azure Pipelines** (Phase 14) as runners.
 
 ## Generated runners
 
 | Runner | Entry point | Notes |
 | --- | --- | --- |
 | GitHub Actions (Phase 1.9) | [`../.github/workflows/qaff-ci.yml`](../.github/workflows/qaff-ci.yml) | Runs on `pull_request` and `workflow_dispatch`. Selected app + layer via dispatch inputs. |
+| Azure Pipelines (Phase 14) | [`../ci/azure-pipelines/azure-pipelines.yml`](../ci/azure-pipelines/azure-pipelines.yml) | Manual/PR pipeline with app+layer selection variables. |
 
 ## GitHub Actions workflow shape
 
@@ -57,14 +58,14 @@ first puts `$HOME/.qaff/bin` on PATH and, when `qaff` is still missing, runs
   runs its JUnit 5 placeholder under default CI. The local Gatling reference
   smoke is explicit opt-in via `run-gatling-smoke` or direct Maven.
 - **No Jenkins** in this project. Re-run `qaff create` with `ci.jenkins.enabled: true` to scaffold it.
-- **No Azure Pipelines** in this project. Re-run `qaff create` with `ci.azurePipelines.enabled: true` to scaffold it.
 - **No GitLab CI** in this project. Re-run `qaff create` with `ci.gitlabCi.enabled: true` to scaffold it.
 - **No application deployment.** Generated runners run tests; the only
   deployment is the opt-in Pages publish of the Allure report (below).
 - **No inline secrets.** Generated CI files contain no credential values.
   The opt-in sync steps read user-managed CI secrets / environment
   variables (`ZEPHYR_BASE_URL`, `ZEPHYR_TOKEN`, `TESTRAIL_URL`, `TESTRAIL_USER`, `TESTRAIL_API_KEY`, `JIRA_BASE_URL`, `JIRA_USER`, `JIRA_TOKEN`); nothing is stored in
-  generated files. The opt-in run notification step reads SLACK_WEBHOOK_URL / TEAMS_WEBHOOK_URL the same way.
+  generated files. The opt-in Azure / GitLab / Bitbucket test-management sync
+  steps read ZEPHYR_BASE_URL / ZEPHYR_TOKEN / TESTRAIL_URL / TESTRAIL_USER / TESTRAIL_API_KEY / JIRA_BASE_URL / JIRA_USER / JIRA_TOKEN the same way. The opt-in run notification step reads SLACK_WEBHOOK_URL / TEAMS_WEBHOOK_URL the same way.
 
 ## Where to find more
 
@@ -73,10 +74,14 @@ first puts `$HOME/.qaff/bin` on PATH and, when `qaff` is still missing, runs
 
 ## Notifications (opt-in)
 
-Run notifications are enabled for: `githubActions`.
+Run notifications are enabled for: `githubActions`, `azurePipelines`.
 See [`notifications.md`](notifications.md) for the secrets and per-provider behaviour.
 
 ## Pages publishing (opt-in)
 
 The Allure HTML report is published to Pages for: `githubActions` (GitHub Pages) — main /
 default branch only, also after failed tests. Setup and URLs: [`github-actions.md`](github-actions.md).
+
+## Test-management sync on Azure / GitLab / Bitbucket (opt-in)
+
+Enabled for: `azurePipelines` (Zephyr Scale / TestRail / Jira comment). See [`test-management-sync.md`](test-management-sync.md).

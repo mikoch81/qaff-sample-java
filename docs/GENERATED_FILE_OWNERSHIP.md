@@ -36,6 +36,17 @@ Examples:
 
 **Edit these freely.** They are never touched by `qaff`.
 
+## Create-Once Files
+
+Create-once files are generated as starter templates and then belong to you. `qaff update` restores one when it is missing, but never reports an existing copy as changed and never overwrites it.
+
+| File | When generated | Who changes it |
+| --- | --- | --- |
+| `config/zephyr-mapping.json`, `config/xray-mapping.json`, `config/testrail-mapping.json` (or the configured `mappingFile`) | A test-management integration with a `mappingFile` is enabled | You — fill in the test-to-case mappings |
+| `framework-performance/baseline/<app>.baseline.json` | The Quality Impact pack is enabled and the app has the `performance` layer | `qaff update-baseline` from a trusted result |
+
+`qaff update-app --force` is an explicit per-app overwrite and does overwrite create-once files; `qaff update` never does.
+
 ## Edit-Safe Zones
 
 These directories are safe to extend with custom code:
@@ -61,10 +72,10 @@ framework-web/
 
 ## Checking Ownership
 
-Run `qaff verify --project .` to see if any managed files have been edited.
+Run `qaff update --project . --dry-run` to see which managed files differ from the renderer output for your lock.
 
 If a managed file was edited:
 1. Save your changes to a separate file
-2. Run `qaff update --project . --force` to restore the file
+2. Run `qaff update --project . --apply --accept-renderer` to restore the file (plain `--apply` keeps locally modified files and writes sidecars for conflicts; `--merge-conflicts` attempts a three-way merge instead; `--paths <list>` limits the run)
 3. Manually re-apply your changes if needed
 4. Consider whether your change should be in config instead

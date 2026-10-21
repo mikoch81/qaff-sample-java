@@ -12,7 +12,7 @@
   "ci": {
     "jenkins": false,
     "githubActions": true,
-    "azurePipelines": false,
+    "azurePipelines": true,
     "gitlabCi": false,
     "jenkinsStrictQualityGate": false,
     "githubActionsStrictQualityGate": false,
@@ -34,15 +34,21 @@
     "jenkinsPerLayerAllure": false,
     "azurePipelinesPerLayerAllure": false,
     "gitlabCiPerLayerAllure": false,
+    "azurePipelinesRunnerLabel": "Default",
     "githubActionsArtifactRetentionDays": 7,
     "githubActionsAllureReport": true,
+    "azurePipelinesAllureReport": true,
     "qaffInstall": "./qa-framework-factory-cli-0.2.0.tgz",
     "jenkinsZephyrSync": false,
     "githubActionsZephyrSync": true,
     "githubActionsNotify": true,
+    "azurePipelinesNotify": true,
     "githubActionsPagesPublish": true,
     "githubActionsTestrailSync": true,
-    "githubActionsJiraComment": true
+    "githubActionsJiraComment": true,
+    "azurePipelinesZephyrSync": true,
+    "azurePipelinesTestrailSync": true,
+    "azurePipelinesJiraComment": true
   },
   "integrations": {
     "notifications": {
@@ -137,6 +143,10 @@
         "sha256": "6dbfb93f2dc550390f3a3f7d1ff8b8114e41cd98cd4e1610afeb482483619fb6"
       },
       {
+        "path": "ci/azure-pipelines/azure-pipelines.yml",
+        "sha256": "b15ccaf0cc69ca668eed9ac0d777973058484155216d7d2bd604a6d13a7737da"
+      },
+      {
         "path": "config/testrail-mapping.json",
         "sha256": "ad20ff27a3a2c9348fc13ededdf5aa62d2ba0a9c81c4dc8b23f293c62e01926b"
       },
@@ -165,8 +175,12 @@
         "sha256": "1180bb13873b0e044aaa5e7f4d2b33b38949a33c8b03230aea7d7b547283a66e"
       },
       {
+        "path": "docs/azure-pipelines.md",
+        "sha256": "93b8122e43c3e7dffa5b60f718e384a02e4e517916e4966292148fedc1b80363"
+      },
+      {
         "path": "docs/ci-cd.md",
-        "sha256": "82fcd98db0a7c932cbbab08f3ba2d61e8b5785211e7c16f2d0acf3e2b73d8ff0"
+        "sha256": "0199930fafe9234fdc74dca2d47e7ae379456834efee6e7f5dc276a14b7bcbab"
       },
       {
         "path": "docs/DEVELOPER_GUIDE.md",
@@ -174,7 +188,7 @@
       },
       {
         "path": "docs/GENERATED_FILE_OWNERSHIP.md",
-        "sha256": "ba93f3edfe65e7f9a7c255822dbda2d448a67d179d231d73c5df931e4c875a7c"
+        "sha256": "39016d2504ea0bffd9b29202e9a8158e5b14048f97295549f845e05fc2e41dc4"
       },
       {
         "path": "docs/generated-architecture.md",
@@ -246,7 +260,7 @@
       },
       {
         "path": "docs/notifications.md",
-        "sha256": "2b98c0e7c6dba7fbecda19ef9193a7edccc03daf310412e7d64589cc1b33ac6f"
+        "sha256": "b582571c687771ede3b310aab77eff391c418e7c475df0658621bd03bb7b5852"
       },
       {
         "path": "docs/scenario-contract.md",
@@ -258,7 +272,7 @@
       },
       {
         "path": "docs/test-management-sync.md",
-        "sha256": "03ae6bfc616ca160bc59581585fc731195419e337b95c456b66229b5ae01b77f"
+        "sha256": "130935a6f333f841b3b3fd6dc81745269a6c1cef76796bb4a7477874665774e9"
       },
       {
         "path": "framework-core/pom.xml",

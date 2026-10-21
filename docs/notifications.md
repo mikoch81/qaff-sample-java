@@ -19,6 +19,7 @@ config, `qa-factory.lock.json`, generated files or the request file.
 ## Per CI provider
 
 - **GitHub Actions** — repository secret; last step with `if: always()`, status from `job.status`.
+- **Azure Pipelines** — secret pipeline variable mapped through `env:`; last step with `condition: always()`, status from `Agent.JobStatus`.
 
 ## Local preview
 

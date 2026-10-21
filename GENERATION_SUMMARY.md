@@ -47,6 +47,7 @@ apps/demo-saas/web-desktop/src/test/java/com/example/qaffsamplejava/apps/demosaa
 apps/demo-saas/web-desktop/src/test/resources/allure.properties
 apps/demo-saas/web-desktop/src/test/resources/config.properties
 apps/demo-saas/web-desktop/src/test/resources/fixtures/demo-saas.html
+ci/azure-pipelines/azure-pipelines.yml
 config/testrail-mapping.json
 docs/agent-validation-checklist.md
 docs/ai-api-test-authoring.md
@@ -54,6 +55,7 @@ docs/ai-authoring-readiness.md
 docs/ai-web-test-authoring.md
 docs/allure-step-mapping-contract.md
 docs/allure-step-policy.md
+docs/azure-pipelines.md
 docs/ci-cd.md
 docs/DEVELOPER_GUIDE.md
 docs/GENERATED_FILE_OWNERSHIP.md
