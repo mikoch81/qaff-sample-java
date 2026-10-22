@@ -5,7 +5,7 @@
 #     user-managed repository secrets ZEPHYR_BASE_URL / ZEPHYR_TOKEN / TESTRAIL_URL / TESTRAIL_USER / TESTRAIL_API_KEY / JIRA_BASE_URL / JIRA_USER / JIRA_TOKEN;
 #     nothing is stored in generated files. The opt-in run notification
 #     step reads SLACK_WEBHOOK_URL / TEAMS_WEBHOOK_URL the same way.
-#   * Opt-in test-management sync steps: Zephyr Scale Cloud (mode: dry-run) / TestRail / Jira comment.
+#   * Opt-in test-management sync steps: Zephyr Scale Cloud (mode: live) / TestRail / Jira comment.
 #     No test cases, runs or issues are created.
 #   * No external test systems. The workflow runs Maven against the
 #     generated reactor only.
@@ -200,7 +200,7 @@ jobs:
           if [ "$SYNC_APP" = "all" ]; then
             SYNC_APP="demo-saas"
           fi
-          qaff sync-zephyr-results --project . --app "$SYNC_APP" --project-key "$PROJECT_KEY" $CYCLE_ARG --mode dry-run --force --json
+          qaff sync-zephyr-results --project . --app "$SYNC_APP" --project-key "$PROJECT_KEY" $CYCLE_ARG --mode live --mapping config/zephyr-mapping.json --force --json
 
       # Opt-in TestRail sync (ci.githubActions.testrailSync): qaff sync-test-results --mode live.
       - name: Sync Allure results to TestRail

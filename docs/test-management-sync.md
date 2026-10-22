@@ -25,7 +25,7 @@ add a branch condition or keep `mode: dry-run` if you want main-only sync.
 
 ## What is sent
 
-- **Zephyr Scale Cloud** — `qaff sync-zephyr-results --mode dry-run` (Azure / GitLab / Bitbucket steps; the `ZEPHYR_PROJECT_KEY` / `ZEPHYR_CYCLE_KEY` CI variables override the config keys).
+- **Zephyr Scale Cloud** — `qaff sync-zephyr-results --mode live` (Azure / GitLab / Bitbucket steps; the `ZEPHYR_PROJECT_KEY` / `ZEPHYR_CYCLE_KEY` CI variables override the config keys).
 - **TestRail** — one `POST index.php?/api/v2/add_results_for_cases/1` to the existing run; skipped tests are left out (TestRail rejects Untested on add_result).
 - **Jira** — one comment (`POST /rest/api/3/issue/DEMO-1/comment`) with the totals and a link to the CI run.
 

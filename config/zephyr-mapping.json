@@ -1,0 +1,7 @@
+{
+  "_comment": "Allure fullName -> Zephyr Scale test case (qaff sync-zephyr-results). Phase 117 live check.",
+  "mappings": [
+    { "caseKey": "DEMO-T1", "fullName": "com.example.qaffsamplejava.apps.demosaas.webdesktop.tests.DemoHomeSmokeTest.homePageRenders" },
+    { "caseKey": "DEMO-T2", "fullName": "com.example.qaffsamplejava.apps.demosaas.webdesktop.tests.DemoProductCardTest.productCardFieldsAreConsistent" }
+  ]
+}

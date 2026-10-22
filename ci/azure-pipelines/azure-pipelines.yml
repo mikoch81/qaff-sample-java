@@ -170,7 +170,7 @@ steps:
       if [ "$SYNC_APP" = "all" ]; then
         SYNC_APP="demo-saas"
       fi
-      qaff sync-zephyr-results --project . --app "$SYNC_APP" --project-key "$PROJECT_KEY" $CYCLE_ARG --mode dry-run --force --json
+      qaff sync-zephyr-results --project . --app "$SYNC_APP" --project-key "$PROJECT_KEY" $CYCLE_ARG --mode live --mapping config/zephyr-mapping.json --force --json
     displayName: Sync Allure results to Zephyr Scale Cloud
     condition: always()
     env:

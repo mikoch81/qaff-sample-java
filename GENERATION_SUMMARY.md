@@ -49,6 +49,7 @@ apps/demo-saas/web-desktop/src/test/resources/config.properties
 apps/demo-saas/web-desktop/src/test/resources/fixtures/demo-saas.html
 ci/azure-pipelines/azure-pipelines.yml
 config/testrail-mapping.json
+config/zephyr-mapping.json
 docs/agent-validation-checklist.md
 docs/ai-api-test-authoring.md
 docs/ai-authoring-readiness.md

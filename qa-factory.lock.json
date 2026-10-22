@@ -63,11 +63,12 @@
     "zephyr": {
       "enabled": true,
       "provider": "zephyr-scale-cloud",
-      "mode": "dry-run",
+      "mode": "live",
       "jenkinsSync": false,
       "githubActionsSync": true,
       "failOnUnmapped": false,
-      "projectKey": "DEMO"
+      "projectKey": "DEMO",
+      "mappingFile": "config/zephyr-mapping.json"
     },
     "testrail": {
       "enabled": true,
@@ -96,7 +97,7 @@
     "files": [
       {
         "path": ".github/workflows/qaff-ci.yml",
-        "sha256": "a79aaf4356e734bb95f5cd92f43da86127c8477ae6687d136b3dfabe72d43b10"
+        "sha256": "bd2632cb48fcfc26c394d178b89b6f0d6a29dfce0affda1385c73416379852ba"
       },
       {
         "path": ".gitignore",
@@ -144,11 +145,15 @@
       },
       {
         "path": "ci/azure-pipelines/azure-pipelines.yml",
-        "sha256": "b15ccaf0cc69ca668eed9ac0d777973058484155216d7d2bd604a6d13a7737da"
+        "sha256": "6300e0074cc85c3e563142804cbfdc5cac504015cde0f40d0f3222aaf4524b5f"
       },
       {
         "path": "config/testrail-mapping.json",
         "sha256": "ad20ff27a3a2c9348fc13ededdf5aa62d2ba0a9c81c4dc8b23f293c62e01926b"
+      },
+      {
+        "path": "config/zephyr-mapping.json",
+        "sha256": "7fdc9769bc831afe63647f9536bb820a09c25c7101974b024c71704988df9fdd"
       },
       {
         "path": "docs/agent-validation-checklist.md",
@@ -272,7 +277,7 @@
       },
       {
         "path": "docs/test-management-sync.md",
-        "sha256": "130935a6f333f841b3b3fd6dc81745269a6c1cef76796bb4a7477874665774e9"
+        "sha256": "46f6653636763708de769b691da5dbb9e3e474a5f633dae42533955720acbc8e"
       },
       {
         "path": "framework-core/pom.xml",
