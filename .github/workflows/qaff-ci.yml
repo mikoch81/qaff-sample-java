@@ -181,7 +181,7 @@ jobs:
               mkdir -p "$HOME/.qaff/node"
               curl -fsSL https://nodejs.org/dist/v24.21.0/node-v24.21.0-linux-x64.tar.gz | tar -xz -C "$HOME/.qaff/node" --strip-components=1
             fi
-            npm install -g --prefix "$HOME/.qaff" ./qa-framework-factory-cli-0.2.0.tgz
+            npm install -g --prefix "$HOME/.qaff" ./qa-framework-factory-cli-0.4.0.tgz
           fi
           if ! command -v qaff >/dev/null 2>&1; then
             echo "qaff CLI not found on PATH — skipping the Zephyr Scale sync. Install qaff in an earlier step to enable it."
@@ -217,7 +217,7 @@ jobs:
               mkdir -p "$HOME/.qaff/node"
               curl -fsSL https://nodejs.org/dist/v24.21.0/node-v24.21.0-linux-x64.tar.gz | tar -xz -C "$HOME/.qaff/node" --strip-components=1
             fi
-            npm install -g --prefix "$HOME/.qaff" ./qa-framework-factory-cli-0.2.0.tgz
+            npm install -g --prefix "$HOME/.qaff" ./qa-framework-factory-cli-0.4.0.tgz
           fi
           if ! command -v qaff >/dev/null 2>&1; then
             echo "qaff CLI not found on PATH — skipping the TestRail sync. Install qaff in an earlier step to enable it."
@@ -244,7 +244,7 @@ jobs:
               mkdir -p "$HOME/.qaff/node"
               curl -fsSL https://nodejs.org/dist/v24.21.0/node-v24.21.0-linux-x64.tar.gz | tar -xz -C "$HOME/.qaff/node" --strip-components=1
             fi
-            npm install -g --prefix "$HOME/.qaff" ./qa-framework-factory-cli-0.2.0.tgz
+            npm install -g --prefix "$HOME/.qaff" ./qa-framework-factory-cli-0.4.0.tgz
           fi
           if ! command -v qaff >/dev/null 2>&1; then
             echo "qaff CLI not found on PATH — skipping the Jira comment sync. Install qaff in an earlier step to enable it."
@@ -277,7 +277,7 @@ jobs:
               mkdir -p "$HOME/.qaff/node"
               curl -fsSL https://nodejs.org/dist/v24.21.0/node-v24.21.0-linux-x64.tar.gz | tar -xz -C "$HOME/.qaff/node" --strip-components=1
             fi
-            npm install -g --prefix "$HOME/.qaff" ./qa-framework-factory-cli-0.2.0.tgz
+            npm install -g --prefix "$HOME/.qaff" ./qa-framework-factory-cli-0.4.0.tgz
           fi
           if ! command -v qaff >/dev/null 2>&1; then
             echo "qaff CLI not found on PATH — skipping the run notification. Install qaff (or set ci.qaffInstall) to enable it."

@@ -33,6 +33,8 @@ Case keys come from the Allure `tms` link, a `tms` / `testCaseKey` label or the
 mapping file. No test cases, runs or issues are created remotely.
 Zephyr posts test executions into the existing cycle (`ZEPHYR_CYCLE_KEY` /
 `integrations.zephyr.cycleKey`); it creates no test cases or cycles.
+A live step with zero mapped tests sends nothing and reports `NO_MAPPED_RESULTS`
+(exit 0, unless `--fail-on-unmapped` is set).
 
 ## Secrets
 
@@ -44,6 +46,9 @@ Zephyr posts test executions into the existing cycle (`ZEPHYR_CYCLE_KEY` /
 - `JIRA_BASE_URL`
 - `JIRA_USER`
 - `JIRA_TOKEN`
+
+`ZEPHYR_BASE_URL` is `https://api.zephyrscale.smartbear.com` (or a region host such as
+`https://eu.api.zephyrscale.smartbear.com`); a trailing `/v2` is accepted.
 
 Read only from the CI environment (GitHub repository secrets, Jenkins agent
 environment, Azure secret pipeline variables, GitLab masked CI/CD variables,

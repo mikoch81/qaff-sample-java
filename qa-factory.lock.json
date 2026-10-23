@@ -38,7 +38,7 @@
     "githubActionsArtifactRetentionDays": 7,
     "githubActionsAllureReport": true,
     "azurePipelinesAllureReport": true,
-    "qaffInstall": "./qa-framework-factory-cli-0.2.0.tgz",
+    "qaffInstall": "./qa-framework-factory-cli-0.4.0.tgz",
     "jenkinsZephyrSync": false,
     "githubActionsZephyrSync": true,
     "githubActionsNotify": true,
@@ -97,7 +97,7 @@
     "files": [
       {
         "path": ".github/workflows/qaff-ci.yml",
-        "sha256": "bd2632cb48fcfc26c394d178b89b6f0d6a29dfce0affda1385c73416379852ba"
+        "sha256": "c3ac142192aa9ad6e7f5601a89c7f90e174bbda5a2842f049dfae9d692a34d9d"
       },
       {
         "path": ".gitignore",
@@ -145,7 +145,7 @@
       },
       {
         "path": "ci/azure-pipelines/azure-pipelines.yml",
-        "sha256": "6300e0074cc85c3e563142804cbfdc5cac504015cde0f40d0f3222aaf4524b5f"
+        "sha256": "4e00cabf65c28c812b92d1d19f5565b7dad7697464a5a4b1d6addaf0ab31a210"
       },
       {
         "path": "config/testrail-mapping.json",
@@ -185,7 +185,7 @@
       },
       {
         "path": "docs/ci-cd.md",
-        "sha256": "0199930fafe9234fdc74dca2d47e7ae379456834efee6e7f5dc276a14b7bcbab"
+        "sha256": "c347a126b93b15d4c7c8e1caed1392383a06b9fd57a92c14c9b64169e531eacb"
       },
       {
         "path": "docs/DEVELOPER_GUIDE.md",
@@ -193,7 +193,7 @@
       },
       {
         "path": "docs/GENERATED_FILE_OWNERSHIP.md",
-        "sha256": "39016d2504ea0bffd9b29202e9a8158e5b14048f97295549f845e05fc2e41dc4"
+        "sha256": "f1fff94689f4be4531248a7529ea34564dd883bfe83680b4494ecc0f1c42b784"
       },
       {
         "path": "docs/generated-architecture.md",
@@ -277,7 +277,7 @@
       },
       {
         "path": "docs/test-management-sync.md",
-        "sha256": "46f6653636763708de769b691da5dbb9e3e474a5f633dae42533955720acbc8e"
+        "sha256": "464b724e9d3c36cac4148fe841af60d84a4694a6772bb9cc21ad75fa4ea2b924"
       },
       {
         "path": "framework-core/pom.xml",

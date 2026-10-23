@@ -38,9 +38,9 @@ manual-dispatch instructions and current limitations.
 
 ## Installing qaff in CI
 
-`ci.qaffInstall` is set to `./qa-framework-factory-cli-0.2.0.tgz`. Every generated step that calls `qaff`
+`ci.qaffInstall` is set to `./qa-framework-factory-cli-0.4.0.tgz`. Every generated step that calls `qaff`
 first puts `$HOME/.qaff/bin` on PATH and, when `qaff` is still missing, runs
-`npm install -g --prefix "$HOME/.qaff" ./qa-framework-factory-cli-0.2.0.tgz`. When the image has no npm
+`npm install -g --prefix "$HOME/.qaff" ./qa-framework-factory-cli-0.4.0.tgz`. When the image has no npm
 (e.g. `maven:3.9.6-eclipse-temurin-21`) it first downloads Node.js
 24.21.0 (linux-x64) into `$HOME/.qaff/node`. No root is needed.
 

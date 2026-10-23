@@ -20,9 +20,12 @@ Examples:
 - Generated demo test classes (e.g., `*SmokeTest.java`)
 - `.github/workflows/` (CI/CD definitions)
 
-**Do not edit managed files.** Instead:
-1. Update your config (`qa-factory.yaml`)
-2. Run `qaff update --project .`
+**Do not edit managed files.** `qaff update` renders from `qa-factory.lock.json`; this project ships no config file. To change a setting (manual, review-first):
+1. Export the config: `qaff export-config --project . --output qa-factory.yaml`.
+2. Edit it and regenerate into a fresh directory: `qaff create --config qa-factory.yaml --output <fresh-dir>`.
+3. `diff -rq <fresh-dir> .` lists what changed; copy those managed files, `qa-factory.lock.json` and `.qaff/managed-base/` from the fresh directory into this project. `qaff update --project . --dry-run` reports `CLEAN` once nothing is missing.
+
+Apps and layers change through `qaff add-app` / `add-layer` / `remove-app` / `remove-layer` / `rename-app` instead — they update the lock for you.
 
 ## Custom Files
 
