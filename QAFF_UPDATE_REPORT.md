@@ -1,7 +1,7 @@
 # QAFF Update Apply Report
 
 Status: APPLIED
-acceptRenderer: false
+acceptRenderer: true
 mergeConflicts: false
 
 ## Merge outcomes
@@ -9,20 +9,12 @@ mergeConflicts: false
 - sidecarFallbacks: 0
 
 ## Written
-- .github/workflows/qaff-ci.yml
-- ci/azure-pipelines/azure-pipelines.yml
-- docs/ci-cd.md
+- none
 
 ## Merged conflicts
 - none
 
 ## Overwritten local
-- none
-
-## Overwritten conflict
-- none
-
-## Skipped local
 - scripts/allure-report.ps1
 - scripts/run-all-tests.ps1
 - scripts/run-android-smoke.ps1
@@ -36,6 +28,12 @@ mergeConflicts: false
 - scripts/run-web-mobile-smoke.ps1
 - scripts/run-web-smoke.ps1
 - scripts/verify-framework.ps1
+
+## Overwritten conflict
+- none
+
+## Skipped local
+- none
 
 ## Skipped unclassified
 - none

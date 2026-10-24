@@ -96,6 +96,10 @@
     "algorithm": "sha256",
     "files": [
       {
+        "path": ".gitattributes",
+        "sha256": "52e87240f800e3270f39dcb05c18dc5fef71e5a004ec8ca469ca09935c51201d"
+      },
+      {
         "path": ".github/workflows/qaff-ci.yml",
         "sha256": "c3ac142192aa9ad6e7f5601a89c7f90e174bbda5a2842f049dfae9d692a34d9d"
       },
